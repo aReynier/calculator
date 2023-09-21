@@ -202,9 +202,6 @@ body {
     border: none;
     cursor: pointer;
     border-bottom: 1px solid darkgrey;
-}
-
-.button-content p {
     font-family: Play, sans-serif;
     font-size: 19px;
 }
