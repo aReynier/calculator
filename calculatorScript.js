@@ -10,7 +10,7 @@ console.log("test");
 let number = [];
 let addedNumber = [];
 
-let buttonTable = [ "7", "8", "9", "%", "M+","4", "5", "6", "x", "MR", "1", "2", "3", "-", "C", "0", ".", "CE", "+", "="]
+let buttonTable = [ "7", "8", "9", "/", "M+","4", "5", "6", "x", "MR", "1", "2", "3", "-", "C", "0", ".", "CE", "+", "="]
 
 const createButton = () => {
     for(let i=0; i < buttonTable.length; i++) {
@@ -72,11 +72,11 @@ const isDecimalPointButton = (button) => {
 const isOperatorButton = (button) => {
     button.addEventListener('click', () => {
         const buttonListened = button.innerText;
-        const isOperator = (num) => /^[+\-x%]$/.test(num);
+        const isOperator = (num) => /^[+\-x/]$/.test(num);
         if (isOperator(buttonListened)) {
             if(number) {
                 const isLastEntryNumber = (num) => /^\d/.test(num);
-                const isLastEntryOperator = (num) => /^[+\-x%]$/.test(num);
+                const isLastEntryOperator = (num) => /^[+\-x/]$/.test(num);
 
                 if(isLastEntryNumber(number)) {
                     addedNumber.push(number.join(""));
@@ -84,10 +84,10 @@ const isOperatorButton = (button) => {
                 
                 if (isLastEntryNumber(addedNumber[addedNumber.length-1])) {
                     switch(buttonListened) {
-                        case "%":
+                        case "/":
                             addedNumber.push("/")
                             console.log(addedNumber);
-                            document.getElementById("calculator-screen-numbers").textContent= "%";
+                            document.getElementById("calculator-screen-numbers").textContent= "/";
                             number = [];
                         break;
                         case "x":
@@ -218,7 +218,7 @@ document.addEventListener('keydown', (event) => {
     if(event.key === "+" || event.key === "-" || event.key === "*" || event.key === "/" ){
         if(number) {
             const isLastEntryNumber = (num) => /^\d/.test(num);
-            const isLastEntryOperator = (num) => /^[+\-x%]$/.test(num);
+            const isLastEntryOperator = (num) => /^[+\-x/]$/.test(num);
 
             if(isLastEntryNumber(number)) {
                 addedNumber.push(number.join(""));
