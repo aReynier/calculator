@@ -195,7 +195,7 @@ body {
     border-radius: 2px;
     position: relative;
     bottom: 1px;
-    background-color: grey;
+    background-color: rgb(161, 159, 159);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -212,8 +212,14 @@ body {
     border-bottom: 0;
 }
 
-.buttons-content-10 p {
-    font-size: 12px;
+.buttons-content-4, .buttons-content-9, .buttons-content-14, .buttons-content-15, .buttons-content-18, .buttons-content-19, .buttons-content-20 {
+    background-color: #5f8085;
+    border-bottom: 1px solid #82A8AC;
+}
+
+.buttons-content-5, .buttons-content-10, .buttons-content-20 {
+    background-color: #cfd1cc;
+    border-bottom: 1px solid white;
 }
 
 .calculator-sub-buttons-1, .calculator-sub-buttons-2, .calculator-sub-buttons-3 {
