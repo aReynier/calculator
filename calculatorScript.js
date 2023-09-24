@@ -148,6 +148,8 @@ const isEqualButton = (button) => {
             let result = addedNumber.join("");
             document.getElementById("calculator-screen-numbers").textContent=  `${eval(result)}`;
             console.log(result);
+            addedNumber = [];
+            addedNumber.push(eval(result));
             number = [];
         }
     });
@@ -244,10 +246,10 @@ document.addEventListener("keydown", (event) => {
         let result = addedNumber.join("");
         document.getElementById("calculator-screen-numbers").textContent= `${eval(result)}`;
         console.log(result);
-        console.log(eval(result));
+        addedNumber = [];
+        addedNumber.push(eval(result));
         number = [];
     }
-
     if(event.key === "Escape") {
         number = [];
         addedNumber = [];
